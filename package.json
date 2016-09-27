@@ -9,6 +9,7 @@
     "express": "^4.14.0",
     "express-jwt": "^5.0.0",
     "jsonwebtoken": "^7.1.9",
+    "oauth": "^0.9.14",
     "pg": "^6.1.0",
     "sequelize": "^3.24.3",
     "sequelize-cli": "^2.4.0"
