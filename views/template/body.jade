@@ -1,0 +1,28 @@
+extends master
+
+block content
+  div.container
+    div.row
+      div.col-sm-4.col-sm-offset-4
+        div#twatt-logo-wrapper
+          img#twatt-logo(src='images/twatt_logo_white.png')
+          span#twatt-highlight twitter highlight
+        div#panel-search.panel.panel-info
+          div.panel-heading Search Tweet
+          div.panel-body
+            form(action="/", method="POST")
+              div(class='form-group')
+                input(id='txt-search',class='form-control',type='text',autocomplete='off',name='search')
+              button(type='submit', class='btn btn-info btn-block') Search
+        div#panel-result
+          if tweet
+            p.result-text Tweet result for
+              span.search
+                =search
+            each value, index in tweet
+              div.panel.panel-default
+                div.panel-body
+                  p= value.text
+                div.panel-footer
+                  img.user(src=value.user.profile_image_url)
+                  span.user= value.user.name
