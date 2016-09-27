@@ -3,10 +3,6 @@ var router = express.Router();
 var http = require('http')
 var oauth = require('oauth')
 
-var accessToken = '39072092-bKj1beTz6bHyrxlRb0xZivQJiDwCje5HObHFtskvn'
-var accessTokenSecret = 'T5SPIgwyz9FJ3TKWGAGj3Dl8ydFCyhlRcrK8MAsKX61qF'
-var consumerKey = 'Vt2ZJFztRrz2jKzjs5WQgGpK0'
-var consumerSecret = 'h0xUPh70Dl6rup2bDwZPPhUAXO91dO4z9bPCmyPF4eFzp3M19y'
 
 
 /* GET home page. */
