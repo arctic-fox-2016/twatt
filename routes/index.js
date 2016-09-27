@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var http = require('http')
 var oauth = require('oauth')
+var twitConfig = require('../config.js')
 
 
 
@@ -18,8 +19,8 @@ router.post('/search', function (req, res, next) {
 	myOauth = new oauth.OAuth(
 		'https://api.twitter.com/oauth/request_token',
 		'https://api.twitter.com/oauth/access_token',
-		consumerKey,
-		consumerSecret,
+		twitConfig.consumerKey,
+		twitConfig.consumerSecret,
 		'1.0A',
 		null,
 		'HMAC-SHA1'
@@ -27,8 +28,8 @@ router.post('/search', function (req, res, next) {
 
 	myOauth.get(
 		'https://api.twitter.com/1.1/search/tweets.json?q=' + req.body.searchQuery,
-		accessToken,
-		accessTokenSecret,
+		twitConfig.accessToken,
+		twitConfig.accessTokenSecret,
 		function (err, data, rs) {
 			if (err) console.error(err)
 			console.log(require('util').inspect(data));
