@@ -66,7 +66,7 @@ app.post("/authenticate", function(req, res, next) {
 });
 
 
-app.listen(4000, function() {
+app.listen(process.env.PORT, function() {
     console.log('example app listenings port 3000!');
 
 })
