@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form method="post" action="/api/search">
+      <input type="text" name="search">
+      <input type="submit">
+    </form>
+    <h1>Statuses</h1>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Tweet</th>
+        <th>Date</th>
+      </tr>
+      <% for (var i = 0; i < data.statuses.length; i++) { %>
+      <tr>
+        <td><%= data.statuses[i].user.screen_name %></td>
+        <td><%= data.statuses[i].text %></td>
+        <td><%= data.statuses[i].created_at %></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
