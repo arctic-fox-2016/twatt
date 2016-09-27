@@ -6,6 +6,11 @@ let http = require('http')
 let bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:true}))
 
+let kata = function(input){
+  let output = input.replace(/#/ig, "%23")
+  return output
+}
+
 let myoauth = new OAuth.OAuth(
   	"https://api.twitter.com/oauth/request_token",
     "https://api.twitter.com/oauth/access_token",
@@ -24,8 +29,9 @@ app.get('/', function(req,res,next){
 
 app.post('/', function(req,res,next){
   // res.send('test')
+  let input = kata(req.body.q)
   myoauth.get(
-    `https://api.twitter.com/1.1/search/tweets.json?count=10&q=${req.body.q}`,
+    `https://api.twitter.com/1.1/search/tweets.json?count=10&q=${input}`,
     "780590703545946112-lXrMYSlTMCK4AlthI3svYpfPEqp3GwK",
     "pN3eSlhILnZKw4i29ROWYQBqmSyWpfOi5ycxUX8zpLrRY",
     function(e,data,rs){
