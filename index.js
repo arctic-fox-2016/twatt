@@ -19,10 +19,10 @@ let myoauth = new OAuth.OAuth(
 app.set('port', process.env.PORT || 3000)
 app.set('view-engine', 'ejs')
 app.get('/', function(req,res,next){
-  res.render('result.ejs', {data: null})
+  res.render('index.ejs', {data: null})
 })
 
-app.post('/test', function(req,res,next){
+app.post('/', function(req,res,next){
   // res.send('test')
   myoauth.get(
     `https://api.twitter.com/1.1/search/tweets.json?count=10&q=${req.body.q}`,
@@ -33,7 +33,7 @@ app.post('/test', function(req,res,next){
         console.error(e)
       } else {
         let result = JSON.parse(data)
-        res.render('result.ejs', {data: result})
+        res.render('index.ejs', {data: result})
       }
     }
   )
