@@ -9,10 +9,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var oauth = require('oauth');
 
-var _consumer_key= 'Q8PcIX03xFtbLk8CBQy2rqEN8';
-var _consumer_secret= 'JoZyKqS4MTvKaegVKy4xWJH063P9pX3C1cysY8XvRGmAIXcm2U';
-var _access_token_key= '44306843-tUGQHsIlQk8eQFpzUKkVJ0gqI8slc2cpQxEmJcqui';
-var _access_token_secret= '11y2mnH5MDaXymQKrD3OvaiMZJwwPbrbCrTPwXVnxyQTE';
+var _consumer_key= 'XXXXX';
+var _consumer_secret= 'XXXXX';
+var _access_token_key= '44306843-XXXXXX';
+var _access_token_secret= 'XXXXXX';
 
 function consumer() {
   return new oauth.OAuth(
